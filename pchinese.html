@@ -4,31 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Chinese food recommendations in the Greater Boston Area.">
-    <meta name="keywords" content="Asian Food, Chinese, Mala, Clay Pot, Dim Sum, Dumplings">
-    <meta name="author" content="Alice Qi">
+    <meta
+      name="description"
+      content="Chinese food recommendations in the Greater Boston Area."
+    />
+    <meta
+      name="keywords"
+      content="Asian Food, Chinese, Mala, Clay Pot, Dim Sum, Dumplings"
+    />
+    <meta name="author" content="Alice Qi" />
     <title>Chinese Food in Boston</title>
     <link rel="stylesheet" href="style/styles.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed"
+    />
     <link rel="icon" href="images/favicon.ico" type="icon" />
-    <style>
-      .header {
-        background-image: url("images/hargow.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 80%;
-      }
-    </style>
   </head>
   <body>
-    <ul>
+    <ul class="navbar">
       <li><a href="index.html">Home</a></li>
-      <li><a href="aboutme.html">About Me</a></li>
-      <li><a href="sitemap.html">Site Map</a></li>
+      <li><a href="aboutme.html">About</a></li>
+
       <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn"
-          ><img src="images/menuicon.png" height="20"
-        /></a>
+        <a href="javascript:void(0)" class="dropbtn">Explore Cuisines</a>
         <div class="dropdown-content">
           <a href="pchinese.html">Chinese</a>
           <a href="pjapan.html">Japanese</a>
@@ -38,8 +37,17 @@
         </div>
       </li>
     </ul>
-    <div class="header">
+    <div class="cuisineHeader">
       <h1>Chinese Food In Boston</h1>
+      <img
+        src="images/hargow.jpg"
+        title="shrimp dumplings"
+        alt="image of shrimp dumplings"
+        id="headerImage"
+      />
+      <button id="main">Main Image</button>
+      <button id="map">View Map</button>
+      <p id="link"></p>
     </div>
     <table>
       <tr>
@@ -51,9 +59,9 @@
             <em>129 Brighton Ave, Allston, MA 02134</em>
           </div>
           <div class="open-hours">$$</div>
-          <div class="recs">
-            Recommended Dishes: Beef/Lamb Mala Dry Pot & Dried-Stir-Fry Chicken
-            with Spicy Capsicum
+          <div class="recs" id="rec1">
+            Click here for dish recommendations!
+            
           </div>
         </td>
         <td>
@@ -62,14 +70,18 @@
             <em>74 Kneeland St, Boston, MA 02111</em>
           </div>
           <div class="open-hours">$</div>
-          <div class="recs">Recommended Dish: Yellow Eel Clay Pot Rice</div>
+          <div class="recs" id="rec2">
+            Click here for dish recommendations!
+           =
+          </div>
         </td>
         <td>
           <div class="restaurant">Windsor Dim Sum Cafe</div>
           <div class="neighborhood"><em>10 Tyler St, Boston, MA 02111</em></div>
           <div class="open-hours">$</div>
-          <div class="recs">
-            Recommended Dish: Shrimp & Chive Dumplings & Congee
+          <div class="recs" id="rec3">
+            Click here for dish recommendations!
+           
           </div>
         </td>
       </tr>
@@ -80,7 +92,10 @@
             <em>236 Washington St, Brookline, MA 02445</em>
           </div>
           <div class="open-hours">$$</div>
-          <div class="recs">Recommended Dish: Hot Pot</div>
+          <div class="recs" id="rec4">
+            Click here for dish recommendations!
+         
+          </div>
         </td>
         <td>
           <div class="restaurant">Dolphin Bay</div>
@@ -88,15 +103,103 @@
             <em>72 Brighton Ave, Boston, MA 02134</em>
           </div>
           <div class="open-hours">$</div>
-          <div class="recs">Recommended Dish: Popcorn Chicken</div>
+          <div class="recs" id="rec5">
+            Click here for dish recommendations!
+           
+          </div>
         </td>
         <td>
           <div class="restaurant">Hei La Moon Restaurant</div>
           <div class="neighborhood"><em>83 Essex St, Boston, MA 02111</em></div>
           <div class="open-hours">$</div>
-          <div class="recs">Recommended Dish: Dim Sum</div>
+          <div class="recs" id="rec6">
+            Click here for dish recommendations!
+           
+          </div>
         </td>
       </tr>
     </table>
+    
+    <footer class="footerContainer">
+      <a class="sitemap" href="sitemap.html">Sitemap</a>
+    </footer>
+    <script>
+      function main() {
+        const mainImg = document.getElementById("headerImage");
+        mainImg.src = "images/hargow.jpg";
+        const title = document.querySelector("h1");
+        title.innerText = "Chinese Food In Boston";
+      }
+      function map() {
+        const mapImg = document.getElementById("headerImage");
+        mapImg.src = "images/cmap.png";
+        const title = document.querySelector("h1");
+        title.innerText = "Map of Chinese Restaurants";
+        title.style.textDecorationLine = "underline";
+        title.style.href = "reference.html";
+
+      }
+      function link() {
+        let link = document.createElement("a");
+        let txt = document.createTextNode("View Full Map");
+        link.appendChild(txt);
+        link.title = "View Full Map";
+        // Set the href property.
+        link.href = "map.html";
+        let el = document.getElementById("link");
+        // Append the anchor element to the body.
+        el.appendChild(link);
+      }
+
+      document.getElementById("map").addEventListener("click", function () {
+        map();
+        link();
+      });
+      document.getElementById("main").addEventListener("click", function () {
+        main();
+      });
+
+      function changeMala() {
+        document.getElementById("rec1").innerHTML =
+          "Recommended Dishes: Beef/Lamb Mala Dry Pot & Dried-Stir-Fry Chicken with Spicy Capsicum";
+      }
+      function changeClay() {
+        document.getElementById("rec2").innerHTML =
+          "Recommended Dish: Yellow Eel Clay Pot Rice";
+      }
+      function changeWindsor() {
+        document.getElementById("rec3").innerHTML =
+          "Recommended Dish: Shrimp & Chive Dumplings & Congee";
+      }
+      function changeQ() {
+        document.getElementById("rec4").innerHTML = "Recommended Dish: Hot Pot";
+      }
+      function changeDolphin() {
+        document.getElementById("rec5").innerHTML =
+          "Recommended Dish: Popcorn Chicken";
+      }
+      function changeMoon() {
+        document.getElementById("rec6").innerHTML = "Recommended Dish: Dim Sum";
+      }
+
+      document.getElementById("rec1").addEventListener("click", function () {
+        changeMala();
+      });
+      document.getElementById("rec2").addEventListener("click", function () {
+        changeClay();
+      });
+      document.getElementById("rec3").addEventListener("click", function () {
+        changeWindsor();
+      });
+      document.getElementById("rec4").addEventListener("click", function () {
+        changeQ();
+      });
+      document.getElementById("rec5").addEventListener("click", function () {
+        changeDolphin();
+      });
+      document.getElementById("rec6").addEventListener("click", function () {
+        changeMoon();
+      });
+    </script>
   </body>
 </html>

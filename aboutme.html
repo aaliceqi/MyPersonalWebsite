@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Meet the Creator of Boston Eats">
-    <meta name="keywords" content="Asian Food, Chinese, Thai, Japanese, Vietnamese, Korean, Boston">
-    <meta name="author" content="Alice Qi">
+    <meta name="description" content="Meet the Creator of Boston Eats" />
+    <meta
+      name="keywords"
+      content="Asian Food, Chinese, Thai, Japanese, Vietnamese, Korean, Boston"
+    />
+    <meta name="author" content="Alice Qi" />
     <title>About Me</title>
     <link rel="stylesheet" href="style/styles.css" />
     <link
@@ -16,18 +19,12 @@
     <link rel="icon" href="images/favicon.ico" type="icon" />
   </head>
   <body>
-    <ul>
+    <ul class="navbar">
       <li><a href="index.html">Home</a></li>
-      <li><a href="aboutme.html">About Me</a></li>
-      <li><a href="sitemap.html">Site Map</a></li>
+      <li><a href="aboutme.html">About</a></li>
+
       <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn"
-          ><img
-            src="images/menuicon.png"
-            title="menuicon"
-            alt="menu"
-            height="20"
-        /></a>
+        <a href="javascript:void(0)" class="dropbtn">Explore Cuisines</a>
         <div class="dropdown-content">
           <a href="pchinese.html">Chinese</a>
           <a href="pjapan.html">Japanese</a>
@@ -38,58 +35,90 @@
       </li>
     </ul>
     <div class="containercontact">
-      <div style="text-align: center">
-        
-       
-      </div>
+      <div class="cuisineHeader">
+      <h1>How it all began</h1></div>
       <div class="row">
         <div class="columncontact">
-          <img src="images/Alice Qi.jpg" title="Alice Qi" alt="a picture of Alice Qi"/>
+          <img
+            src="images/Alice Qi.jpg"
+            title="Alice Qi"
+            alt="a picture of Alice Qi"
+          />
+          
         </div>
         <div class="columncontact">
-          <h2>Meet the Creator</h2>
-           <p>
-          Hello, My name is Alice and I am a big foodie! This page is dedicated
-          to college students in need of some Asian food recommendations in the greater Boston area. A big
-          thank you to all my friends who recommended me to try all these
-          restaurants, and now it's YOUR turn! Feel free to drop your favorite
-          restaurants & must-try dishes below:
-        </p>
-       
+          <p>
+            Hello, My name is Alice and I am a big foodie! This page is
+            dedicated to college students in need of some Asian food
+            recommendations in the greater Boston area. A big thank you to all
+            my friends who recommended me to try all these restaurants, and now
+            it's YOUR turn! Feel free to drop your favorite restaurants & must-try dishes below:
+          </p>
+
           <form action="/action_page.php">
-            <label for="fname">Restaurant Name</label>
+            <p id="error"></p>
+            <label for="restaurantName">Restaurant Name</label>
             <input
               type="text"
-              id="fname"
-              name="firstname"
+              id="restaurantName"
+              name="restaurantName"
               placeholder="Enter restaurant name..."
             />
-            <label for="lname">Address</label>
+            <label for="address">Address</label>
             <input
               type="text"
-              id="lname"
-              name="lastname"
+              id="address"
+              name="address"
               placeholder="Enter the restaurant's address..."
             />
-            <label for="country">Cuisine</label>
-            <select id="country" name="country">
-              <option value="australia">Chinese</option>
-              <option value="canada">Japanese</option>
-              <option value="usa">Korean</option>
-              <option value="usa">Thai</option>
-              <option value="usa">Vietnamese</option>
+            <label for="cuisine">Cuisine</label>
+            <select id="cuisineType" name="cuisineType">
+              <option value="Chinese">Chinese</option>
+              <option value="Japanese">Japanese</option>
+              <option value="Korean">Korean</option>
+              <option value="Thai">Thai</option>
+              <option value="Vietnamese">Vietnamese</option>
             </select>
-            <label for="subject">Why?</label>
+            <label for="reason">Why?</label>
             <textarea
-              id="subject"
-              name="subject"
+              id="reason"
+              name="reason"
               placeholder="Write something.."
-              style="height: 170px"
             ></textarea>
-            <input type="submit" value="Submit" />
-          </form>
+            
+          </form><button id="submit ">Submit</button>
         </div>
       </div>
     </div>
+
+    <footer class="footerContainer">
+      <a class="sitemap" href="sitemap.html">Sitemap</a>
+    </footer>
+
+    <script>
+      //validate food recommendation form
+
+
+      function checkInputs(){ 
+      const name =document.getElementById("restaurantName").value;
+      console.log(name)
+      const address =document.getElementById("address").value;
+      const reason = document.getElementById("reason").value;
+      const button = document.getElementById("submit");
+      const error = document.getElementById("error")
+        if (name === ""){
+          error.innerText="please enter a restaurant name."
+        }else if( address === ""){
+          error.innerText="please enter the restaurant's address"
+        }else if( reason === ""){
+          error.innerText="please provide a reason for your recommendation"
+        }
+
+      }
+
+      document.querySelector("button").addEventListener("click", function(){
+        checkInputs();
+      })
+    </script>
   </body>
 </html>

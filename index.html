@@ -22,22 +22,16 @@
     <link rel="icon" href="images/favicon.ico" type="icon" />
   </head>
   <body>
-    <div class="headermain">
-      <h1 class="title">Welcome to Boston Eats</h1>
-      <p class="mainp"><em>A Guide to the Best Asian Food in the City</em></p>
-    </div>
-    <ul>
+    <div class="box">
+      <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+
+
+    <ul class="navbar">
       <li><a href="index.html">Home</a></li>
-      <li><a href="aboutme.html">About Me</a></li>
-      <li><a href="sitemap.html">Site Map</a></li>
+      <li><a href="aboutme.html">About</a></li>
       <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn"
-          ><img
-            src="images/menuicon.png"
-            title="menuicon"
-            alt="menu"
-            height="20"
-        /></a>
+        <a href="javascript:void(0)" class="dropbtn">Explore Cuisines</a>
         <div class="dropdown-content">
           <a href="pchinese.html">Chinese</a>
           <a href="pjapan.html">Japanese</a>
@@ -47,110 +41,145 @@
         </div>
       </li>
     </ul>
-    <!-- Photo Grid -->
-    <div class="prow">
-      <div class="pcolumn">
-        <a href="pkorea.html"
-          ><img
-            src="images/kbbq.jpg"
-            title="Gopchang Story"
-            alt="picture of Beef Intestines"
-        /></a>
+    <div class="headermain">
+      <h1 class="title">Welcome to Boston Eats</h1>
+      <p class="mainp"><em>A Guide to the Best Asian Food in the City</em></p>
+    </div>
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 5</div>
         <a href="pchinese.html"
-          ><img
-            src="images/hargow.jpg"
-            title="Hei La Moon"
-            alt="picture of Shrimp Dumplings"
-        /></a>
-        <a href="pviet.html"
-          ><img
-            src="images/chickenpho.jpg"
-            title="Pho Pasteur"
-            alt="picture of Chicken Pho"
-        /></a>
-        <a href="pchinese.html"
-          ><img
-            src="images/soupdumping.jpg"
-            title="Windsor Dim Sum Cafe"
-            alt="picture of Soup Dumplings"
-        /></a>
-        <a href="pjapan.html"
-          ><img
-            src="images/kaisendon.jpg"
-            title="Tora Restaurant"
-            alt="picture of Kaisen Don"
-        /></a>
-        <a href="pviet.html"
-          ><img
-            src="images/phobasil1.jpg"
-            title="Pho Basil"
-            alt="picture of Saigon Noodles and Curry"
-        /></a>
-        <a href="pjapan.html"
-          ><img
-            src="images/shabu.jpg"
-            title="Spring Shabu Shabu"
-            alt="picture of hot pot"
-        /></a>
-        <a href="pviet.html"
-          ><img
-            src="images/bahnmi.jpg"
-            title="Ba Le Restaurant"
-            alt="picture of Banh Mi"
-        /></a>
-      </div>
-      <div class="pcolumn">
-        <a href="pjapan.html"
-          ><img
-            src="images/wagyu.jpg"
-            title="Fuji on Ink Block"
-            alt="picture of wagyu beef"
-        /></a>
-        <a href="pthai.html"
-          ><img
-            src="images/kapowrice.jpg"
-            title="Dakzen"
-            alt="picture of Beef and Rice"
-        /></a>
-        <a href="pkorea.html"
-          ><img
-            src="images/bimbimbap.jpg"
-            title="Coreanos"
-            alt="picture of bimbimbap"
-        /></a>
-        <a href="pthai.html"
-          ><img
-            src="images/curry.jpg"
-            title="Mahaniyom"
-            alt="picture of Panang Curry"
-        /></a>
-        <a href="pchinese.html"
-          ><img
-            src="images/sichuan.jpg"
-            title="Mala Restaurant"
-            alt="picture of Mala peppers"
-        /></a>
-        <a href="pkorea.html"
-          ><img
-            src="images/rabokki.jpg"
-            title="Seoul Topokki"
-            alt="picture of rabokki"
-        /></a>
-        <a href="pthai.html"
-          ><img
-            src="images/padthai.jpg"
-            title="Laughing Monk Cafe"
-            alt="picture of pad thai"
+          ><img id="homeImg" src="images/soupdumping.jpg" 
         /></a>
 
-        <!-- <img src="images/wagyu.jpg" />
-        <img src="images/kapowrice.jpg" />
-        <img src="images/bimbimbap.jpg" />
-        <img src="images/curry.jpg" />
-        <img src="images/sichuan.jpg" />
-        <img src="images/rabokki.jpg" />
-        <img src="images/padthai.jpg" /> -->
+        <div class="homeImageCaption">Soup Dumpings - Windsor Dim Sum Cafe</div>
       </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 5</div>
+        <a href="pjapan.html"
+          ><img id="homeImg" src="images/kaisendon.jpg" 
+        /></a>
+        <div class="homeImageCaption">
+          Kaisen Don - Tora Japanese Restaurant
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 5</div>
+        <a href="pkorea.html">
+          <img id="homeImg" src="images/kbbq.jpg" 
+        /></a>
+
+        <div class="homeImageCaption">
+          Grilled Beef Intestines - Gopchang Story
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 5</div>
+        <a href="pthai.html"
+          ><img id="homeImg" src="images/kapowrice.jpg" 
+        /></a>
+        <div class="homeImageCaption">Ka Pow Rice - Dakzen</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 5</div>
+        <a href="pviet.html"
+          ><img id="homeImg" src="images/pho.jpg" 
+        /></a>
+        <div class="homeImageCaption">Dac Biet - Pho Basil</div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
     </div>
+    <br />
+
+    <div style="text-align: center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+
+    <div class="highlightRestaurants">
+      <div class="sidebysideContainer">
+        
+      <h2>Overall 5 Must Trys</h2><div class="highlightRest">
+      <p>Mala Restaurant</p>
+      <p>Kaju Tofu House</p>
+      <p>Dakzen</p>
+      <p>Pho Basil</p>
+      <p>Tsurotontan Udon</p>
+    </div>
+   </div>
+    <div class="sidebysideContainer">
+      <img class="aniSlides" src="images/sichuan.jpg" style="width:100%">
+      <img class="aniSlides" src="images/udon.jpg" style="width:100%">
+      <img class="aniSlides" src="images/padthai.jpg" style="width:100%">
+    </div>
+ </div>
+    <script>
+
+      
+
+      //javascript for slideshow
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+
+      //animated slides
+      var myIndex = 0;
+
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("aniSlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+      
+    </script>
+    
+    <footer class="footerContainer">
+      <a class="sitemap" href="sitemap.html">Sitemap</a>
+    </footer>
   </body>
 </html>

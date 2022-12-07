@@ -14,24 +14,16 @@
       href="https://fonts.googleapis.com/css?family=Roboto+Condensed"
     />
     <link rel="icon" href="images/favicon.ico" type="icon" />
-    <style>
-      .header {
-        background-image: url("images/thai.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: auto;
-      }
-    </style>
+    
   </head>
   <body>
-    <ul>
+    <ul class="navbar">
       <li><a href="index.html">Home</a></li>
-      <li><a href="aboutme.html">About Me</a></li>
-      <li><a href="sitemap.html">Site Map</a></li>
+      <li><a href="aboutme.html">About</a></li>
+      
       <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn"
-          ><img src="images/menuicon.png" height="20"
-        /></a>
+          >Explore Cuisines</a>
         <div class="dropdown-content">
           <a href="pchinese.html">Chinese</a>
           <a href="pjapan.html">Japanese</a>
@@ -41,8 +33,12 @@
         </div>
       </li>
     </ul>
-    <div class="header">
+    <div class="cuisineHeader">
       <h1>Thai Food In Boston</h1>
+      <img src="images/curry.jpg" title="curry dish" alt="picture of curry dish" id="headerImage">
+      <button id="main">Main Image</button>
+      <button id="map">View Map</button>
+      <p id="link"></p>
     </div>
 
     <table>
@@ -55,7 +51,7 @@
             <em>1A Crawford St, Watertown, MA 02472</em>
           </div>
           <div class="open-hours">$</div>
-          <div class="recs">Recommended Dishes: Crispy Chicken Rice</div>
+          <div class="recs" id="rec1">Click here for dish recommendations!</div>
         </td>
         <td>
           <div class="restaurant">
@@ -68,7 +64,7 @@
             <em>168A Brighton Ave, Boston, MA 02134</em>
           </div>
           <div class="open-hours">$$</div>
-          <div class="recs">Recommended Dish: Papaya Salad</div>
+          <div class="recs" id="rec2">Click here for dish recommendations!</div>
         </td>
         <td>
           <div class="restaurant">
@@ -78,7 +74,7 @@
             <em>195 Elm St, Somerville, MA 02144</em>
           </div>
           <div class="open-hours">$</div>
-          <div class="recs">Recommended Dish: Gui-Chai-Tod & Khao Soi</div>
+          <div class="recs" id="rec3">Click here for dish recommendations!</div>
         </td>
       </tr>
       <tr>
@@ -90,7 +86,7 @@
             <em>236 Washington St, Brookline, MA 02445</em>
           </div>
           <div class="open-hours">$$</div>
-          <div class="recs">Recommended Dish: Beef Panang</div>
+          <div class="recs" id="rec4">Click here for dish recommendations!</div>
         </td>
         <td>
           <div class="restaurant">
@@ -100,9 +96,8 @@
             <em>737 Huntington Ave, Boston, MA 02115</em>
           </div>
           <div class="open-hours">$$</div>
-          <div class="recs">
-            Recommended Dish: Pad See Ew, Basil Fried Rice, & Shrimp Spring
-            Rolls
+          <div class="recs" id="rec5">
+            Click here for dish recommendations!
           </div>
         </td>
         <td>
@@ -115,9 +110,88 @@
             <em>1422 Beacon St, Brookline, MA 02446</em>
           </div>
           <div class="open-hours">$</div>
-          <div class="recs">Recommended Dish: Boat Noodle Soup</div>
+          <div class="recs" id="rec6">Click here for dish recommendations!</div>
         </td>
       </tr>
     </table>
+    <footer>
+    <a class="sitemap" href="sitemap.html">Sitemap</a></footer>
+    <script>
+       function main() {
+        const mainImg = document.getElementById("headerImage");
+        mainImg.src = "images/curry.jpg";
+        const title = document.querySelector("h1");
+        title.innerText = "Thai Food In Boston";
+      }
+      function map() {
+        const mapImg = document.getElementById("headerImage");
+        mapImg.src = "images/tmap.png";
+        const title = document.querySelector("h1");
+        title.innerText = "Map of Thai Restaurants";
+        title.style.textDecorationLine = "underline";
+        title.style.href = "reference.html";
+
+      }
+      function link() {
+        let link = document.createElement("a");
+        let txt = document.createTextNode("View Full Map");
+        link.appendChild(txt);
+        link.title = "View Full Map";
+        // Set the href property.
+        link.href = "map.html";
+        let el = document.getElementById("link");
+        // Append the anchor element to the body.
+        el.appendChild(link);
+      }
+
+      document.getElementById("map").addEventListener("click", function () {
+        map();
+        link();
+      });
+      document.getElementById("main").addEventListener("click", function () {
+        main();
+      });
+      function change1() {
+        document.getElementById("rec1").innerHTML =
+          "Recommended Dishes: Crispy Chicken Rice";
+      }
+      function change2() {
+        document.getElementById("rec2").innerHTML =
+          "Recommended Dish: Papaya Salad";
+      }
+      function change3() {
+        document.getElementById("rec3").innerHTML =
+          "Recommended Dish: Gui-Chai-Tod & Khao Soi";
+      }
+      function change4() {
+        document.getElementById("rec4").innerHTML = "Recommended Dish: Beef Panang";
+      }
+      function change5() {
+        document.getElementById("rec5").innerHTML =
+          "Recommended Dish: Pad See Ew, Basil Fried Rice, & Shrimp Spring Rolls";
+      }
+      function change6() {
+        document.getElementById("rec6").innerHTML = "Recommended Dish: Boat Noodle Soup";
+      }
+  
+      document.getElementById("rec1").addEventListener("click", function () {
+        change1();
+      });
+      document.getElementById("rec2").addEventListener("click", function () {
+        change2();
+      });
+      document.getElementById("rec3").addEventListener("click", function () {
+        change3();
+      });
+      document.getElementById("rec4").addEventListener("click", function () {
+        change4();
+      });
+      document.getElementById("rec5").addEventListener("click", function () {
+        change5();
+      });
+      document.getElementById("rec6").addEventListener("click", function () {
+        change6();
+      });
+    </script>
   </body>
 </html>

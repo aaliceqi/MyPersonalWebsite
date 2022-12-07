@@ -16,7 +16,7 @@ justify-content: center; */
 }
 li {
 float:left;
-font-size: 16pt;
+font-size: 12pt;
 
 }
 
@@ -113,17 +113,18 @@ background-color: rgb(38, 28, 22)}
   max-width: 10000px;
   position: relative;
   margin: auto;
-  height: 500px;
+  height: 300px;
   
 }
 img{
-height: 500px;
+height: 300px;
 object-fit:contain;
 position: center;
 }
 
 #homeImg{
-width: 80%;
+  width: 100%;
+
 }
 /* Next & previous buttons */
 .prev, .next {
@@ -195,7 +196,11 @@ width: 80%;
   .prev, .next,.text {font-size: 11px}
 }
 
-
+@media only screen and (max-width:620px){
+  .navbar,.headermain,.slideshow-container, .sidebysideContainer,.footerContainer{
+    width:100%;
+  }
+}
 
 
 /* Style the buttons */

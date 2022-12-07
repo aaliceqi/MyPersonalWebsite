@@ -197,7 +197,7 @@ position: center;
 }
 
 @media only screen and (max-width:620px){
-  .navbar,.headermain,.slideshow-container, .sidebysideContainer,.footerContainer{
+  .navbar,.headermain,.slideshow-container, .footerContainer{
     width:100%;
   }
 }
@@ -233,12 +233,13 @@ position: center;
   float: left;
   width: 50%;
   margin-top: 6px;
-  padding: 20px;
+  padding:10px;
+  
 }
 .highlightRest{
   text-align:center;
   font-size: 14pt;
-
+  
 }
 img {
   width: 100%;
@@ -251,18 +252,16 @@ img {
 
 @media screen and (max-width: 620px){
   .table-responsive{
-      width: 100%;
+      max-width: 100%;
       margin-bottom: 15px;
       overflow-y: hidden;
-      -ms-overflow-style: -ms-autohiding-scrollbar;
-      border: 1px solid #ddd;
+      overflow-x: hidden;
+     
+ 
   }
 }
-  .table-responsive > .table {
-      margin-bottom: 0;
-  }
-  
-
+ 
+ 
 table{
   border-collapse: collapse;
   margin-left: auto;
